@@ -1,0 +1,23 @@
+.aboutCls{
+    height: 100%;
+    background-color: #fff;
+}
+
+.profileCls{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    
+}
+
+.imgCls{
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+}
+
+.profiledetailsCls{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}

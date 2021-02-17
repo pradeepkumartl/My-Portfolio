@@ -1,0 +1,22 @@
+.container-fluid{
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.navbar{
+    height: 10vh;
+    background: #fff;
+}
+
+.navbar-brand{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+/* .navbar-collapse{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+} */
