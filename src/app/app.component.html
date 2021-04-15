@@ -1,23 +1,43 @@
 <div class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand">Lakshmi Pradeep kumar Thotakura</a>
-    <button class="navbar-toggler" data-toggle="collapse" type="button" data-target="#collapsibleNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand">Lakshmi Pradeep kumar, Thotakura</a>
+    <!-- <button class="navbar-toggler" data-toggle="collapse" type="button" data-target="#collapsibleNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNav">
       <ul class="nav navbar-nav">
         <li class="navbar-item">
-          <a class="nav-link" [routerLink]="['/about']">About Me</a>
+          <a class="nav-link" routerLinkActive="underline" [routerLink]="['/about']">About Me</a>
         </li>
         <li class="navbar-item">
-          <a class="nav-link" routerLink="">Hobbies</a>
+          <a class="nav-link" routerLinkActive="underline" [routerLink]="['/hobbies']">Hobbies</a>
         </li>
         <li class="navbar-item">
-          <a class="nav-link" [routerLink]="['/projects']">Projects</a>
+          <a class="nav-link" routerLinkActive="underline" [routerLink]="['/projects']">Projects</a>
         </li>
       </ul>
-    </div>
+    </div> -->
+    <ul class="nav-items">
+      <li>
+        <a routerLinkActive="underline" [routerLink]="['/about']">About Me</a>
+      </li>
+      <li>
+        <a routerLinkActive="underline" (click)="linkClicked()" [routerLink]="['/skills']">Skills</a>
+      </li>
+      <li>
+        <a routerLinkActive="underline" [routerLink]="['/projects']">Projects</a>
+      </li>
+    </ul>
   </nav>
   <br>
-  <router-outlet></router-outlet>
+  <div class="routeContainer" [@routeAnimation]="getRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  <div class="contact-me"><button (click)="contactMe()"><i class="fa fa-pencil-square-o"></i>Contact me</button></div>
+  <div>
+    <footer style="height: 30px; background-color: teal; margin-top: 20px; text-align: center;">
+      &copy; Pradeep kumar
+    </footer>
+  </div>
+  <app-loading *ngIf="svc.isRefreshing"></app-loading>
 </div>

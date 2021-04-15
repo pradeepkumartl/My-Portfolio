@@ -1,0 +1,42 @@
+<div id="contact-me" style="height: 100%;">
+    <header style="height:10%; text-align: center; background-color: teal; color: #fff; font-size: 18px;">
+        Contact Me
+    </header>
+    <section class="contact-section">
+        <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="w-100" appFieldValidator>
+            <div>
+                <label for="name">Your name:</label>
+                <input type="text" id="name" name="name" formControlName="name">
+                <p *ngIf="contactForm.get('name').dirty && contactForm.get('name').invalid" class="text-danger">Name is not valid</p>
+            </div>
+            <div>
+                <label for="">Email ID:</label>
+                <input type="email" name="emailId" formControlName="emailId">
+                <p *ngIf="contactForm.get('emailId').dirty && contactForm.get('emailId').invalid" class="text-danger">Name is not valid</p>
+            </div>
+            <div>
+                <label>Purpose: </label>
+                <select aria-placeholder="test" formControlName="purpose">
+                    <option value="0">Please select</option>
+                    <option value="1">Freelance opportunity</option>
+                    <option value="2">Full time opportunity</option>
+                    <option value="3">Contract opportunity</option>
+                    <option value="4">Collaboration</option>
+                </select>
+            </div>
+            <div>
+                <label>Contact number:</label>
+                <input type="tel" formControlName="contact">
+            </div>
+            <div>
+                <label>
+                    Message:
+                </label>
+                <textarea placeholder="Write a message" rows="3" formControlName="message"></textarea>
+            </div>
+            <p *ngIf="contactForm.dirty && contactForm.errors?.purpose" class="text-danger">Form is not valid</p>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!contactForm.valid">Submit</button>
+        </form>
+    </section>
+</div>
+

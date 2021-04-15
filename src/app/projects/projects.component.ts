@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ServiceService } from '../service.service';
+import { skills } from '../skills/skills';
+import { Projects } from './projects';
 
 @Component({
   selector: 'app-projects',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ServiceService) { }
+
+  Projects: Observable<Array<Projects>>
 
   ngOnInit(): void {
+    this.Projects = this.service.getProjects();
   }
+
+  mySkills: string = "For test";
+  list: skills[]
 
 }
