@@ -24,6 +24,10 @@ export class ServiceService{
     return this.http.get<Projects[]>('http://localhost:3000/projects');
   }
 
+  getRoles(id):Observable<[]>{
+    return this.http.get<[]>(`http://localhost:3000/${id}/roles`);
+  }
+
   isRefreshing:boolean = false;
   showLoading(state){
     this.isRefreshing = state;

@@ -1,5 +1,5 @@
 <p>Below given are my Projects:</p>
-<mat-expansion-panel hideToggle:false *ngFor="let project of Projects | async">
+<mat-expansion-panel hideToggle:false class="expansionPanel" *ngFor="let project of Projects | async;let i=index;" (opened)="openRoles(project.id)">
     <mat-expansion-panel-header>
         <mat-panel-title>
             <div style="display: grid;grid-template-columns: 20rem 20rem;">
@@ -12,5 +12,5 @@
             <span appDateCheck [toDate]="project.to">{{project.to | date: 'mediumDate'}}</span>
         </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Project Description: Morgan Stanley is an American multinational investment bank and financial services company. As part of a Firm Risk Management team we have developed and maintained web applications which allows the user to make an assessment to a certain control group, determine risks and add suitable controls for them.</p>
+    <p *ngFor="let role of roles">{{role}}</p>
 </mat-expansion-panel>

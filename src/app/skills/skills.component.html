@@ -7,14 +7,16 @@
         <button mat-raised-button (click)="clearFilters()" [disabled]="clearAllFiltersCheck()">Clear all Filters</button>
     </div>
     <div class="skill-grid">
-        <div class="skillCls" *ngFor="let skill of list | skillSearch: search.value" [ngClass]="skill.type">
-            <p appSearchSkillName [(search)]="search.value">{{skill.name}}</p>
-            <div *ngIf="true" style="width: 70%;">
-                <p>Skill Level</p>
-                <p style="height: 5px; background-color: #fff;border-radius: 5px;position: relative;">
-                    <span class="skillProgress" appSkillEval [skillLevel]="skill.expertiseLevel"></span>
-                </p>
-            </div>
+        <div class="skillCls" *ngFor="let skill of list | skillSearch:search.value" [ngClass]="skill.type">
+            <!-- <div *appStructSkills="search.value; skillName: skill.name"> -->
+                <p appSearchSkillName [(search)]="search.value">{{skill.name}}</p>
+                <div *ngIf="true" style="width: 70%;">
+                    <p>Skill Level</p>
+                    <p style="height: 5px; background-color: #fff;border-radius: 5px;position: relative;">
+                        <span class="skillProgress" appSkillEval [skillLevel]="skill.expertiseLevel"></span>
+                    </p>
+                </div>
+            <!-- </div> -->
         </div>
     </div>
 </div>

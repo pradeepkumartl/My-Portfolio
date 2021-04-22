@@ -9,6 +9,7 @@ import { SkillEvalDirective } from '../skill-eval.directive';
 import { LoadingComponent } from './loading/loading.component';
 import { SkillSearchPipe } from './skill-search.pipe';
 import { SearchSkillNameDirective } from './search-skill-name.directive';
+import { StructSkillsDirective } from './struct-skills.directive';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SearchSkillNameDirective } from './search-skill-name.directive';
     SkillEvalDirective,
     LoadingComponent,
     SkillSearchPipe,
-    SearchSkillNameDirective
+    SearchSkillNameDirective,
+    StructSkillsDirective
   ],
   imports: [
     CommonModule,
